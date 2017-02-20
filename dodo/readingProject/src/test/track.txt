@@ -1,0 +1,13 @@
+fork:
+    1. fork后copy一个原track，_id不同，books中的进度信息清零，modifier改为自己的id，date更新，fork_cnt、star_cnt清零
+    2. 加入到user_track table中，并将origin设为0
+    3. 将原track的fork_cnt++
+
+star:
+    1. 将原track的star_cnt++
+    2. 加入到我的user_track_star table中
+
+pull request:
+    1. 创建一个修改后的track的镜像（为了多次pull request不会覆盖之前的），清零进度信息
+    2. 把镜像的_id和我的id，initiator的id插入到pull_request table中
+    3. 将pull request的消息加到message中（not implement yet）

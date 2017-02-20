@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - dodo@localhost" uuid="4201d604-93f1-4bbb-9c22-f8bcb12e1a20">
+    <database-info product="MySQL" version="5.7.14-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="dodo">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="sakila"/>
+      <schema id="6" name="sys"/>
+      <schema id="7" name="world"/>
+      <table id="8" parent="1" name="author"/>
+      <table id="9" parent="1" name="author_book"/>
+      <table id="10" parent="1" name="book"/>
+      <table id="11" parent="1" name="book_category"/>
+      <table id="12" parent="1" name="book_translator"/>
+      <table id="13" parent="1" name="bookshelf"/>
+      <table id="14" parent="1" name="category"/>
+      <table id="15" parent="1" name="category_1"/>
+      <table id="16" parent="1" name="category_2"/>
+      <table id="17" parent="1" name="category_3"/>
+      <table id="18" parent="1" name="category_4"/>
+      <table id="19" parent="1" name="category_5"/>
+      <table id="20" parent="1" name="category_6"/>
+      <table id="21" parent="1" name="category_7"/>
+      <table id="22" parent="1" name="category_8"/>
+      <table id="23" parent="1" name="pull_request"/>
+      <table id="24" parent="1" name="reading_log"/>
+      <table id="25" parent="1" name="reading_progress"/>
+      <table id="26" parent="1" name="role"/>
+      <table id="27" parent="1" name="translator"/>
+      <table id="28" parent="1" name="user"/>
+      <table id="29" parent="1" name="user_role"/>
+      <table id="30" parent="1" name="user_track"/>
+      <table id="31" parent="1" name="user_track_star"/>
+      <column id="32" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="33" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="34" parent="8" name="nationality">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="35" parent="8" name="introduction">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="36" parent="8" name="image">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="37" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="38" parent="9" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="39" parent="9" name="author_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <index id="40" parent="9" name="author_idx">
+        <columns>author_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="41" parent="9" name="PRIMARY">
+        <columns>book_id
+author_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="42" parent="9" name="book">
+        <columns>book_id</columns>
+        <ref-key>~.book.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="43" parent="9" name="author">
+        <columns>author_id</columns>
+        <ref-key>~.author.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="44" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="45" parent="10" name="wid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="46" parent="10" name="pages">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="47" parent="10" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="48" parent="10" name="publisher">
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="49" parent="10" name="introduction">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="50" parent="10" name="rate">
+        <data-type>double|0</data-type>
+      </column>
+      <column id="51" parent="10" name="image">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="52" parent="10" name="isbn10">
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="53" parent="10" name="isbn13">
+        <data-type>varchar(13)|0</data-type>
+      </column>
+      <index id="54" parent="10" name="isbn10_UNIQUE">
+        <columns>isbn10</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="55" parent="10" name="isbn13_UNIQUE">
+        <columns>isbn13</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="56" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="57" parent="10" name="isbn10_UNIQUE">
+        <columns>isbn10</columns>
+        <underlying-index>isbn10_UNIQUE</underlying-index>
+      </key>
+      <key id="58" parent="10" name="isbn13_UNIQUE">
+        <columns>isbn13</columns>
+        <underlying-index>isbn13_UNIQUE</underlying-index>
+      </key>
+      <column id="59" parent="11" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="60" parent="11" name="category_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="61" parent="11" name="PRIMARY">
+        <columns>book_id
+category_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="62" parent="12" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="63" parent="12" name="translator_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <index id="64" parent="12" name="book_translator_ibfk_2">
+        <columns>translator_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="65" parent="12" name="PRIMARY">
+        <columns>book_id
+translator_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="66" parent="12" name="book_translator_ibfk_1">
+        <columns>book_id</columns>
+        <ref-key>~.book.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="67" parent="12" name="book_translator_ibfk_2">
+        <columns>translator_id</columns>
+        <ref-key>~.translator.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="68" parent="13" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="69" parent="13" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <index id="70" parent="13" name="book_id_idx">
+        <columns>book_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="71" parent="13" name="PRIMARY">
+        <columns>user_id
+book_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="72" parent="13" name="user_id">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="73" parent="13" name="book_id">
+        <columns>book_id</columns>
+        <ref-key>~.book.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="74" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="14" name="description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="76" parent="14" name="reference">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="77" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="78" parent="15" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="79" parent="15" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="80" parent="15" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="81" parent="16" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="82" parent="16" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="83" parent="16" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="84" parent="17" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="85" parent="17" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="86" parent="17" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="87" parent="18" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="88" parent="18" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="89" parent="18" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="90" parent="19" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="91" parent="19" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="92" parent="19" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="20" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="94" parent="20" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="95" parent="20" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="96" parent="21" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="97" parent="21" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="98" parent="21" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="99" parent="22" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="100" parent="22" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="101" parent="22" name="PRIMARY">
+        <columns>track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="102" parent="23" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="103" parent="23" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="104" parent="23" name="modifier_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="105" parent="23" name="initiator_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="106" parent="23" name="date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="107" parent="23" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="108" parent="24" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="109" parent="24" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="110" parent="24" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="111" parent="24" name="current">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="112" parent="24" name="date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="113" parent="24" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="114" parent="25" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="115" parent="25" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="116" parent="25" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="117" parent="25" name="total">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="118" parent="25" name="current">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="119" parent="25" name="date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="120" parent="25" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="121" parent="26" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="122" parent="26" name="description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="123" parent="26" name="reference">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="124" parent="26" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="125" parent="27" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="126" parent="27" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="127" parent="27" name="nationality">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="128" parent="27" name="introduction">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="129" parent="27" name="image">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <key id="130" parent="27" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="131" parent="28" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="132" parent="28" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="133" parent="28" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="134" parent="28" name="firstname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="135" parent="28" name="lastname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <key id="136" parent="28" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="137" parent="29" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="138" parent="29" name="role_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="139" parent="29" name="user_role_ibfk_2">
+        <columns>role_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="140" parent="29" name="PRIMARY">
+        <columns>user_id
+role_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="141" parent="29" name="user_role_ibfk_1">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="142" parent="29" name="user_role_ibfk_2">
+        <columns>role_id</columns>
+        <ref-key>~.role.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="143" parent="30" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="144" parent="30" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <column id="145" parent="30" name="origin">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="146" parent="30" name="PRIMARY">
+        <columns>user_id
+track_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="147" parent="31" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="148" parent="31" name="track_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(24)|0</data-type>
+      </column>
+      <key id="149" parent="31" name="PRIMARY">
+        <columns>user_id
+track_id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

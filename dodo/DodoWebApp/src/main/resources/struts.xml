@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+    <package name="basic" extends="struts-default, json-default">
+
+        <!-- interceptors -->
+        <interceptors>
+            <interceptor name="LoginInterceptor"
+                         class="interceptor.LoginInterceptor">
+            </interceptor>
+            <interceptor name="AdminInterceptor"
+                         class="interceptor.AdminInterceptor">
+            </interceptor>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="LoginInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+
+            <interceptor-stack name="adminStack">
+                <interceptor-ref name="LoginInterceptor"/>
+                <interceptor-ref name="AdminInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login" type="redirect">/login.html</result>
+        </global-results>
+
+        <!-- auth -->
+        <action name="Login" class="action.AuthAction" method="login">
+            <result name="success">/dashboard.html</result>
+            <result name="input">/login.html</result>
+        </action>
+        <action name="Logout" class="action.AuthAction" method="logout">
+            <interceptor-ref name="adminStack"/>
+            <result name="success" type="redirect">/login.html</result>
+        </action>
+        <action name="Signup" class="action.AuthAction" method="signup">
+            <result name="success" type="redirect">/login.html</result>
+            <result name="input">/login.html</result>
+        </action>
+        <action name="validateRegistration" class="action.AuthAction" method="validating">
+            <result name="success">/validateRegistration.jsp</result>
+        </action>
+
+        <!-- user -->
+        <action name="addUserAction" class="action.UserAction" method="addUser">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="deleteUserAction" class="action.UserAction" method="deleteUser">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="updateUserAction" class="action.UserAction" method="updateUser">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="listUserAction" class="action.UserAction" method="listUser">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">users</param>
+            </result>
+        </action>
+        <action name="showUserAction" class="action.UserAction" method="showUser">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+
+        <!-- book -->
+        <action name="addBookAction" class="action.BookAction" method="addBook">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="deleteBookAction" class="action.BookAction" method="deleteBook">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="updateBookAction" class="action.BookAction" method="updateBook">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="listBookAction" class="action.BookAction" method="listBook">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+        <action name="showBookAction" class="action.BookAction" method="showBook">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+
+        <action name="searchAuthorAction" class="action.AuthorAction" method="search">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">authors</param>
+            </result>
+        </action>
+        <action name="searchTranslatorAction" class="action.TranslatorAction" method="search">
+            <interceptor-ref name="adminStack"/>
+            <result type="json">
+                <param name="root">translators</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

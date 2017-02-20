@@ -1,0 +1,67 @@
+[
+  {
+    "authors": [
+      {
+        "id": "c8f7dc24-2e81-427c-80da-b422f48cda73",
+        "introduction": "圣埃克苏佩里（1900－1944）1900年……（省略）",
+        "name": "圣埃克苏佩里",
+        "nationality": "法",
+        "image": "{url}待实现"
+      }
+    ],
+    "id": "34478f8c-024a-40a1-9ec8-0328acab9034",
+    "image": "https://img3.doubanio.com/mpic/s3294754.jpg",
+    "introduction": "小王子驾到！大家好，我是小王子，生活在B612星球……（省略）",
+    "pages": 111,
+    "publisher": "中国友谊出版公司",
+    "rate": 9.2,
+    "isbn13": "9787563332885",
+    "isbn10": "7563332885",
+    "category": [
+      {
+        "id": 1,
+        "description": "literature",
+        "reference": 1
+      }
+    ],
+    "title": "小王子",
+    "translators": [
+      {
+        "id": "e9804558-517d-44bc-b0fb-4d39415c4e75",
+        "name": "胡雨苏",
+        "nationality": "",
+        "image": "{url}待实现"
+      }
+    ],
+    "wid": "34478f8c-024a-40a1-9ec8-0328acab9034"
+  },
+  {
+    "authors": [
+      {
+        "id": "20ef09c3-f5f4-4b2a-88dc-49cf81cd7839",
+        "introduction": "周国平：1945年出生于上海，现在中国社会科学院……（省略）",
+        "name": "周国平",
+        "nationality": "",
+        "image": "{url}待实现"
+      }
+    ],
+    "id": "52bc8843-8a3c-4a57-aeb9-b866e9480599",
+    "image": "https://img3.doubanio.com/mpic/s1239642.jpg",
+    "introduction": "收录散文约50篇，包括《未经省察的人生没有价值》……（省略）",
+    "pages": 242,
+    "publisher": "广西师范大学出版社",
+    "rate": 8.2,
+    "isbn13": "9787563332885",
+    "isbn10": "7563332885",
+    "category": [
+      {
+        "id": 1,
+        "description": "literature",
+        "reference": 1
+      }
+    ],
+    "title": "安静的位置",
+    "translators": [],
+    "wid": "52bc8843-8a3c-4a57-aeb9-b866e9480599"
+  }
+]

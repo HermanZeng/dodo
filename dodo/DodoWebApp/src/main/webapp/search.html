@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>typeahead.js – examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type="text/css" href="resources/css/bootstrap-typeahead.css">
+    <link rel='stylesheet' type="text/css" href="resources/bootstrap/css/bootstrap.min.css">
+    <script src="/resources/js/jquery-2.2.2.js"></script>
+    <script src="/resources/js/typeahead.bundle.js"></script>
+    <style>
+        .label-fatter {
+            padding: 0.8em;
+        }
+    </style>
+</head>
+<body>
+<h4>Translations</h4>
+<ul class="list-unstyled">
+    <li><code class="label label-info">it_IT</code> Calcio</li>
+    <li><code class="label label-info">en_US</code> Soccer</li>
+    <li><code class="label label-info">en_GB</code> Football</li>
+</ul>
+
+<div class="input-group">
+    <!--<input type="text" class="form-control" placeholder="Search for...">-->
+    <span>列夫·托尔斯泰</span>
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+</div>
+
+<span class="label label-primary label-fatter">
+  <!--<span class="glyphicon glyphicon-tag"></span>-->
+  Huge Whiskers
+  <a href="/remove-tag" class="btn btn-default badge">
+    <span class="glyphicon glyphicon-remove"></span>
+  </a>
+</span>
+<span class="label label-primary label-fatter">
+  <!--<span class="glyphicon glyphicon-tag"></span>-->
+  Blue Skin
+  <a href="/remove-tag" class="btn btn-default badge">
+    <span class="glyphicon glyphicon-remove"></span>
+  </a>
+</span>
+<p></p>
+
+<span class="btn btn-default"><a onclick="removeMe()"><span
+        class="glyphicon glyphicon-plus"></span></a></span>
+
+<div>
+    <span class="btn btn-default">列夫·托尔斯泰<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span><a onclick="removeMe()"><span
+            class="glyphicon glyphicon-remove"></span></a></span>
+</div>
+<div class="demo">
+    <input id="search" class="typeahead" type="text" placeholder="type to search...">
+</div>
+<script>
+    var authorsResource = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: 'searchAuthorAction.action?q=%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+
+    var translatorsResource = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: 'searchTranslatorAction.action?q=%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+
+    $('#search').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                name: 'authors-resources',
+                display: 'name',
+                source: authorsResource,
+                templates: {
+                    header: '<h3 style="margin: 0 20px 5px 20px;padding: 3px 0;border-bottom: 1px solid #ccc;font-weight:bold;">作家</h3>'
+                }
+            },
+            {
+                name: 'translators-resources',
+                display: 'name',
+                source: translatorsResource,
+                templates: {
+                    header: '<h3 style="margin: 0 20px 5px 20px;padding: 3px 0;border-bottom: 1px solid #ccc;font-weight:bold;">译者</h3>'
+                }
+            }).bind('typeahead:select', function (ev, suggestion) {
+        alert('Selection: ' + suggestion.id + ', ' + suggestion.name);
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="Message" table="message">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="userId" type="java.lang.String" column="user_id" />
+        <property name="message" type="java.lang.String" column="message" />
+        <property name="read" type="int" column="read_or_not" />
+        <property name="date" type="java.lang.String" column="date" />
+        <property name="type" type="int" column="type" />
+        <property name="reqId" type="java.lang.String" column="req_id" />
+    </class>
+
+</hibernate-mapping>
+

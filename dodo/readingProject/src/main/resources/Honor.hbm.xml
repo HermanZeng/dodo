@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="Honor" table="honor">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="userId" type="java.lang.String" column="user_id" />
+        <property name="trackId" type="java.lang.String" column="track_id" />
+        <property name="bookId" type="java.lang.String" column="book_id" />
+        <property name="stageSeq" type="int" column="stage_seq" />
+        <property name="title" type="java.lang.String" column="title" />
+    </class>
+
+</hibernate-mapping>
+

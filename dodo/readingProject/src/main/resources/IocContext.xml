@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--user registration-->
+    <bean id="validateRegMailConfigure" class="utilities.mail.MailConfig">
+        <property name="smtpHost" value="smtp.163.com"/>
+        <property name="fromAddress" value="account_mail_dodo@163.com"/>
+        <property name="password" value="helloworld1"/>
+        <property name="title" value="welcome to dodo! Validate your email address"/>
+        <property name="webURL" value="http://localhost:8080/validateRegistration"/>
+    </bean>
+
+    <!--token-->
+    <bean id="tokenManager" class="security.token.TokenManager">
+        <property name="generator" ref="tokenGenerator"/>
+        <property name="userDAO" ref="hibernateUserDAO"/>
+    </bean>
+    <bean id="tokenGenerator" class="security.generateStrategy.Sha1Generator"/>
+
+    <bean id="validationCodeManager" class="security.validationCode.ValidationCodeManager">
+        <property name="generator" ref="md5ValidationCodeGenerator"/>
+    </bean>
+    <bean id="md5ValidationCodeGenerator" class="security.generateStrategy.Md5Generator"/>
+
+    <!--user service-->
+    <bean id="userService" class="service.UserService">
+        <property name="userDAO" ref="hibernateUserDAO"/>
+    </bean>
+    <bean id="hibernateUserDAO" class="dao.impl.HibernateUserDAO"/>
+
+    <bean id="adminBookService" class="service.AdminBookService">
+        <property name="bookDAO" ref="hibernateBookDAO"/>
+    </bean>
+
+    <bean id="userBookService" class="service.UserBookService">
+        <property name="bookDAO" ref="hibernateBookDAO"/>
+    </bean>
+    <bean id="hibernateBookDAO" class="dao.impl.HibernateBookDAO"/>
+
+    <bean id="bookshelfService" class="service.BookshelfService">
+        <property name="hibernateUserDAO" ref="hibernateUserDAO"/>
+        <property name="hibernateBookshelfDAO" ref="hibernateBookshelfDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="hibernateBookshelfDAO" class="dao.impl.HibernateBookshelfDAO"/>
+
+    <bean id="readingProgressService" class="service.ReadingProgressService">
+        <property name="tokenManager" ref="tokenManager"/>
+        <property name="progressDAO" ref="hibernateReadingProgressDAO"/>
+    </bean>
+    <bean id="hibernateReadingProgressDAO" class="dao.impl.HibernateReadingProgressDAO"/>
+
+    <bean id="trackService" class="service.TrackService">
+        <property name="tokenManager" ref="tokenManager"/>
+        <property name="trackDAO" ref="morphiaTrackDAO"/>
+    </bean>
+    <bean id="morphiaTrackDAO" class="dao.impl.MorphiaTrackDAO"/>
+
+    <bean id="messageService" class="service.MessageService">
+        <property name="messageDAO" ref="messageDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+        <property name="userDAO" ref="hibernateUserDAO"/>
+    </bean>
+    <bean id="messageDAO" class="dao.impl.HibernateMessageDAO"/>
+
+    <bean id="honorService" class="service.HonorService">
+        <property name="honorDAO" ref="honorDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="honorDAO" class="dao.impl.HibernateHonorDAO"/>
+
+    <bean id="bookReviewLongService" class="service.BookReviewLongService">
+        <property name="reviewDAO" ref="longReviewDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="longReviewDAO" class="dao.impl.HibernateBookReviewLongDAO"/>
+
+    <bean id="bookReviewShortService" class="service.BookReviewShortService">
+        <property name="reviewDAO" ref="shortReviewDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="shortReviewDAO" class="dao.impl.HibernateBookReviewShortDAO"/>
+
+    <bean id="trackReviewService" class="service.TrackReviewService">
+        <property name="reviewDAO" ref="trackReviewDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="trackReviewDAO" class="dao.impl.HibernateTrackReviewDAO"/>
+
+    <bean id="commentLongService" class="service.CommentLongService">
+        <property name="commentDAO" ref="commentLongDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="commentLongDAO" class="dao.impl.HibernateCommentLongDAO"/>
+
+    <bean id="commentShortService" class="service.CommentShortService">
+        <property name="commentDAO" ref="commentShortDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="commentShortDAO" class="dao.impl.HibernateCommentShortDAO"/>
+
+    <bean id="commentTrackService" class="service.CommentTrackService">
+        <property name="commentDAO" ref="commentTrackDAO"/>
+        <property name="tokenManager" ref="tokenManager"/>
+    </bean>
+    <bean id="commentTrackDAO" class="dao.impl.HibernateCommentTrackDAO"/>
+
+</beans>

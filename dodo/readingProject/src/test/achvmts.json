@@ -1,0 +1,20 @@
+[
+  {
+    "user_id": "e9804558-517d-44bc-b0fb-4d39415c4e75",
+    "book_id": "20ef09c3-f5f4-4b2a-88dc-49cf81cd7839",
+    "current": 48,
+    "date": "2016-07-16 08:32:02"
+  },
+  {
+    "user_id": "e9804558-517d-44bc-b0fb-4d39415c4e75",
+    "book_id": "20ef09c3-f5f4-4b2a-88dc-49cf81cd7839",
+    "current": 15,
+    "date": "2016-07-14 21:02:56"
+  },
+  {
+    "user_id": "e9804558-517d-44bc-b0fb-4d39415c4e75",
+    "book_id": "20ef09c3-f5f4-4b2a-88dc-49cf81cd7839",
+    "current": 0,
+    "date": "2016-07-12 22:49:38"
+  }
+]

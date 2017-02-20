@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="PullRequest" table="pull_request">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="trackId" type="java.lang.String" column="track_id"/>
+        <property name="modifierId" type="java.lang.String" column="modifier_id"/>
+        <property name="initiatorId" type="java.lang.String" column="initiator_id"/>
+        <property name="date" type="java.lang.String" column="date"/>
+    </class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="Translator" table="translator">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="java.lang.String" column="name" />
+        <property name="nationality" type="java.lang.String" column="nationality" />
+        <property name="introduction" type="java.lang.String" column="introduction" />
+        <property name="image" type="java.lang.String" column="image" />
+    </class>
+
+</hibernate-mapping>
+

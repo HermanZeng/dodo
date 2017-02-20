@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="resources/images/dodo.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="resources/css/dashboard.css" rel="stylesheet">
+
+    <script src="resources/js/jquery-2.2.2.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <link href="resources/css/bootstrap-multiselect.css" rel="stylesheet">
+    <script src="resources/js/bootstrap-multiselect.js"></script>
+    <script>
+        function setFormUrl(url) {
+            $("#input01").attr("action", url);
+        }
+
+        $(document).ready(function () {
+            $('#example-getting-started').multiselect({
+                nonSelectedText: 'choose a category'
+            });
+        });
+        var a = 1;
+        function click() {
+            if (a % 2 == 0) {
+                $("#select-0").attr('selected', 'selected');
+            }
+            $("#select-0").removeAttr('selected');
+        }
+    </script>
+
+</head>
+
+<body>
+<a id="modal-805463" onclick="setFormUrl('asdjf2093fj')" href="#user-dialog" data-toggle="modal">触发遮罩窗体1</a>
+<a id="modal-805464" onclick="setFormUrl('editUserAction.action?id=fasdjf2093j')" href="#another-dialog" role="button"
+   class="btn" data-toggle="modal">触发遮罩窗体2</a>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="modal fade" id="user-dialog" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                Edit User
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="input01" class="form-horizontal" method="get" action="edit">
+                                <fieldset>
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                       href="#collapseOne">
+                                                        点击我进行展开，再次点击我进行折叠。第 1 部分
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <div class="control-group">
+                                                        <label class="control-label">客资类型：</label>
+                                                        <div class="controls">
+                                                            <select id="example-getting-started" multiple="multiple">
+                                                                <option id="select-0" selected="selected" value="0">
+                                                                    Cheese
+                                                                </option>
+                                                                <option id="select-1" value="1">Tomatoes</option>
+                                                                <option id="select-2" value="2">Mozzarella</option>
+                                                                <option id="select-3" value="3">Mushrooms</option>
+                                                                <option id="select-4" value="4">Pepperoni</option>
+                                                                <option id="select-5" value="5">Onions</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="control-group">
+
+                                                        <!-- Text input-->
+                                                        <label class="control-label" for="input01">Email Address</label>
+                                                        <div class="controls">
+                                                            <input id="dodo-email" type="email" placeholder="email"
+                                                                   class="form-control"
+                                                                   value="funnyeagle@163.com">
+                                                            <p class="help-block"></p>
+                                                        </div>
+                                                    </div>
+                                                    <a onclick="setFormUrl('editUserAction.action?id=fasdjf2093j')"
+                                                       href="#another-dialog" role="button"
+                                                       class="btn" data-toggle="modal">触发遮罩窗体2</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                       href="#collapseTwo">
+                                                        点击我进行展开，再次点击我进行折叠。第 2 部分
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="control-group">
+
+                                                        <!-- Text input-->
+                                                        <label class="control-label" for="input01">First Name</label>
+                                                        <div class="controls">
+                                                            <input id="dodo-firstname" type="text"
+                                                                   placeholder="your first name..."
+                                                                   class="form-control">
+                                                            <p class="help-block"></p>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="control-group">
+
+                                                        <!-- Text input-->
+                                                        <label class="control-label" for="input01">Last Name</label>
+                                                        <div class="controls">
+                                                            <input dodo-lastname type="text"
+                                                                   placeholder="your last name..." class="form-control">
+                                                            <p class="help-block"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                       href="#collapseThree">
+                                                        点击我进行展开，再次点击我进行折叠。第 3 部分
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="control-group">
+
+                                                        <!-- Text input-->
+                                                        <label class="control-label" for="input01">Password</label>
+                                                        <div class="controls">
+                                                            <input type="password" placeholder="" class="form-control">
+                                                            <p class="help-block"></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="control-group">
+
+                                                        <!-- Text input-->
+                                                        <label class="control-label" for="input01">Repeat Your
+                                                            Password</label>
+                                                        <div class="controls">
+                                                            <input type="password" placeholder="" class="form-control">
+                                                            <p class="help-block"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <a class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                                    </div>
+
+
+                                    <div class="control-group">
+                                        <label class="control-label"></label>
+
+                                        <!-- Button -->
+                                        <div class="modal-footer">
+                                            <button class="controls btn btn-primary">Save</button>
+                                            <button class="btn btn-default">Close</button>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="another-dialog" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">
+                    Edit User
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="get" action="edit">
+                    <fieldset>
+
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">First Name</label>
+                            <div class="controls">
+                                <input type="text" placeholder="your first name..." class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">Last Name</label>
+                            <div class="controls">
+                                <input type="text" placeholder="your last name..." class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">Password</label>
+                            <div class="controls">
+                                <input type="password" placeholder="" class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">Repeat Your Password</label>
+                            <div class="controls">
+                                <input type="password" placeholder="" class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            <label class="control-label"></label>
+
+                            <!-- Button -->
+                            <div class="modal-footer">
+                                <button class="controls btn btn-primary">Save</button>
+                                <button class="btn btn-default">Close</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

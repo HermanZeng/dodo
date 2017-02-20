@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9adc99df-c215-45cb-9acc-57c8cf5c0487" name="CloudServer" url="http://182.254.135.243">
+        <fileTransfer host="182.254.135.243" port="22" accessType="SFTP" password="dff9dfe0dffedfffdfc2dfcfdfc6dfc6dfc5dfdddfc5dfd8dfc6dfce" username="sjtu">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

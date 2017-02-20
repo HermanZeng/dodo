@@ -1,0 +1,80 @@
+PODS:
+  - Action (1.2.2):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - Alamofire (3.4.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Cosmos (1.2.3)
+  - Eureka (1.7.0)
+  - FoldingCell (1.0.0)
+  - Locksmith (2.0.8)
+  - Moya/Core (7.0.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 2.0)
+  - Moya/RxSwift (7.0.0):
+    - Moya/Core
+    - RxSwift (~> 2.0)
+  - NSObject+Rx (1.2.1):
+    - RxSwift (~> 2.1)
+  - Reachability (3.1.1)
+  - Result (2.1.2)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
+  - SCLAlertView (0.5.9)
+  - SwiftyJSON (2.3.2)
+  - XLPagerTabStrip (5.0.0)
+
+DEPENDENCIES:
+  - Action
+  - Alamofire (~> 3.4)
+  - AlamofireImage (~> 2.0)
+  - ChameleonFramework/Swift
+  - Cosmos (~> 1.2)
+  - Eureka (~> 1.7)
+  - FoldingCell
+  - Locksmith
+  - Moya/RxSwift
+  - NSObject+Rx
+  - Reachability (from `https://github.com/ashfurrow/Reachability.git`, branch `frameworks`)
+  - RxCocoa
+  - SCLAlertView
+  - SwiftyJSON
+  - XLPagerTabStrip (~> 5.0)
+
+EXTERNAL SOURCES:
+  Reachability:
+    :branch: frameworks
+    :git: https://github.com/ashfurrow/Reachability.git
+
+CHECKOUT OPTIONS:
+  Reachability:
+    :commit: 6db8c29565c319f59174dd63e4b1ac5b471d133a
+    :git: https://github.com/ashfurrow/Reachability.git
+
+SPEC CHECKSUMS:
+  Action: 4c00077042467dbc214418c0b3e46c652b2785c5
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
+  Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
+  Moya: f004b82418fb8165ee1fc9f86190db4b3611fda9
+  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
+  Reachability: 5b69def55ffa04d6f9425a6da1f47338b60557b2
+  Result: 6e722d4a66b1408680dbfcdf51c0b1c4b706316a
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  SCLAlertView: d7c6a48c7d340e60206d4ed0e8ebcbff3b9d2a44
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
+
+PODFILE CHECKSUM: e284c062d605fe95ac6f2ea7572367243ba23cb7
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="User" table="user">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        <property name="email" type="java.lang.String" column="email" />
+        <property name="password" type="java.lang.String" column="password" />
+        <property name="firstname" type="java.lang.String" column="firstname" />
+        <property name="lastname" type="java.lang.String" column="lastname" />
+        <set name="roles" table="user_role" fetch="select" cascade="all" lazy="false">
+            <key column="user_id"/>
+            <many-to-many class="Role"  lazy="false" column="role_id" />
+        </set>
+        <set name="books" table="bookshelf" fetch="select" cascade="all" lazy="false">
+            <key column="user_id"/>
+            <many-to-many class="Book" column="book_id"/>
+        </set>
+    </class>
+
+</hibernate-mapping>
+

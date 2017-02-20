@@ -1,0 +1,10 @@
+{
+  "literature": 1,
+  "popular": 2,
+  "culture": 3,
+  "life": 4,
+  "economics": 5,
+  "technology": 6,
+  "sport": 7,
+  "learning": 8
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+
+    <class name="Book" table="book">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        <property name="wid" type="java.lang.String" column="wid" />
+        <property name="pages" type="int" column="pages" />
+        <property name="title" type="java.lang.String" column="title" />
+        <property name="publisher" type="java.lang.String" column="publisher" />
+        <property name="introduction" type="java.lang.String" column="introduction" />
+        <property name="rate" type="double" column="rate" />
+        <property name="image" type="java.lang.String" column="image" />
+        <property name="isbn10" type="java.lang.String" column="isbn10" />
+        <property name="isbn13" type="java.lang.String" column="isbn13" />
+        <set name="authors" table="author_book" fetch="select" cascade="all" lazy="false">
+            <key column="book_id"/>
+            <many-to-many class="Author"  column="author_id" />
+        </set>
+        <set name="translators" table="book_translator" fetch="select" cascade="all" lazy="false">
+            <key column="book_id"/>
+            <many-to-many class="Translator"  column="translator_id" />
+        </set>
+        <set name="categories" table="book_category" fetch="select" cascade="all" lazy="false">
+            <key column="book_id"/>
+            <many-to-many class="Category"  column="category_id" />
+        </set>
+    </class>
+
+</hibernate-mapping>
+

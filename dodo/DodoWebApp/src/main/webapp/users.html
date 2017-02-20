@@ -1,0 +1,298 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="resources/images/dodo.ico">
+
+    <title>Dodo user management</title>
+
+    <link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <link href="resources/css/dashboard.css" rel="stylesheet">
+
+    <script src="resources/js/jquery-2.2.2.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/js/users-form.js"></script>
+    <script src="resources/js/users-table.js"></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dodo dashboard</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="dashboard.html">Overview </a></li>
+                <li class="active"><a href="#">Users <span class="sr-only">(current)</span></a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Manage users</h1>
+
+            <div>
+                <button class="btn btn-danger" onclick="prepareCreate()"
+                        data-toggle="modal"
+                        data-target="#user-dialog">Create User
+                </button>
+            </div>
+            <p></p>
+            <p></p>
+
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr style="height: 53px;">
+                    <td class="dodo-datagrid-td" id="0-userId"></td>
+                    <td class="dodo-datagrid-td" id="0-firstName"></td>
+                    <td class="dodo-datagrid-td" id="0-lastName"></td>
+                    <td class="dodo-datagrid-td" id="0-email"></td>
+                    <td class="dodo-datagrid-td" id="0-roles"></td>
+                    <td class="dodo-datagrid-td" id="0-action"></td>
+                </tr>
+                <tr style="height: 53px;">
+                    <td class="dodo-datagrid-td" id="1-userId"></td>
+                    <td class="dodo-datagrid-td" id="1-firstName"></td>
+                    <td class="dodo-datagrid-td" id="1-lastName"></td>
+                    <td class="dodo-datagrid-td" id="1-email"></td>
+                    <td class="dodo-datagrid-td" id="1-roles"></td>
+                    <td class="dodo-datagrid-td" id="1-action"></td>
+                </tr>
+                <tr style="height: 53px;">
+                    <td class="dodo-datagrid-td" id="2-userId"></td>
+                    <td class="dodo-datagrid-td" id="2-firstName"></td>
+                    <td class="dodo-datagrid-td" id="2-lastName"></td>
+                    <td class="dodo-datagrid-td" id="2-email"></td>
+                    <td class="dodo-datagrid-td" id="2-roles"></td>
+                    <td class="dodo-datagrid-td" id="2-action"></td>
+                </tr>
+                <tr style="height: 53px;">
+                    <td class="dodo-datagrid-td" id="3-userId"></td>
+                    <td class="dodo-datagrid-td" id="3-firstName"></td>
+                    <td class="dodo-datagrid-td" id="3-lastName"></td>
+                    <td class="dodo-datagrid-td" id="3-email"></td>
+                    <td class="dodo-datagrid-td" id="3-roles"></td>
+                    <td class="dodo-datagrid-td" id="3-action"></td>
+                </tr>
+                <tr style="height: 53px;">
+                    <td class="dodo-datagrid-td" id="4-userId"></td>
+                    <td class="dodo-datagrid-td" id="4-firstName"></td>
+                    <td class="dodo-datagrid-td" id="4-lastName"></td>
+                    <td class="dodo-datagrid-td" id="4-email"></td>
+                    <td class="dodo-datagrid-td" id="4-roles"></td>
+                    <td class="dodo-datagrid-td" id="4-action">
+
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <ul class="pager">
+                <li id="page-older" class="previous disabled"><a onclick="">&larr; Older</a></li>
+                <li id="page-next" class="next"><a onclick="pageUp()">Newer &rarr;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="user-dialog" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="dodo-modal-title">
+                    Edit User
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="user-form" class="form-horizontal">
+                    <fieldset>
+
+                        <div id="form-id-block" class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">ID</label>
+                            <div class="controls">
+                                <input id="form-userId" name="user.userId" type="text" placeholder=""
+                                       class="form-control" disabled>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">Email Address</label>
+                            <div class="controls">
+                                <input id="form-email" name="user.email" type="text" placeholder="your email address..."
+                                       class="form-control dodo-form-item">
+                                <span id="form-email-tip" class="dodo-form-item-tip" style="display:none;color:red;"></span>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">First Name</label>
+                            <div class="controls">
+                                <input id="form-firstName" name="user.firstName" type="text"
+                                       placeholder="your first name..."
+                                       class="form-control dodo-form-item">
+                                <span id="form-firstName-tip" class="dodo-form-item-tip" style="display:none;color:red;"></span>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">Last Name</label>
+                            <div class="controls">
+                                <input id="form-lastName" name="user.lastName" type="text"
+                                       placeholder="your last name..."
+                                       class="form-control dodo-form-item">
+                                <span id="form-lastName-tip" class="dodo-form-item-tip" style="display:none;color:red;"></span>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+
+                        <div id="form-password-block" class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">Password</label>
+                            <div class="controls">
+                                <input id="form-password" name="user.password" type="password"
+                                       class="form-control dodo-form-item">
+                                <span id="form-password-tip" class="dodo-form-item-tip" style="display:none;color:red;"></span>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div id="form-rpassword-block" class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="user-form">Repeat Password</label>
+                            <div class="controls">
+                                <input id="form-rpassword" type="password"
+                                       placeholder="repeat your password..."
+                                       class="form-control dodo-form-item">
+                                <span id="form-rpassword-tip" class="dodo-form-item-tip" style="display:none;color:red;"></span>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+
+                            <div style="width: 100%;height:20px; text-align: center">
+                                <div class="alert alert-warning alert-dismissable my-msg-box"
+                                     style="display:none;">
+                                    <strong></strong>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Button -->
+                        <div class="modal-footer">
+                            <button id="dodo-form-savebtn" type="button" onclick="commitForm()"
+                                    class="btn btn-primary">Save
+                            </button>
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="delete-dialog" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="delete-dialog-title">
+                    Delete User
+                </h4>
+            </div>
+            <div class="modal-body">
+                <strong>Warning!</strong> You are going to delete the user: <br/>
+                <ul>
+                    <li><strong>id = </strong><strong id="deleteId"></strong></li>
+                </ul>
+                Do you confirm?
+                <div style="width: 100%;height:20px; text-align: center">
+                    <div class="alert alert-warning alert-dismissable my-msg-box"
+                         style="display:none;">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="commitDelete()" class="btn btn-danger">Delete
+                </button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
